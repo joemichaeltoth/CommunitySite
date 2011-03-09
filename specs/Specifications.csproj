@@ -58,8 +58,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Membership\ForgotPasswordSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration\RegistrationSpecs.cs" />
+    <Compile Include="Membership\RegistrationSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\Core\Core.csproj">

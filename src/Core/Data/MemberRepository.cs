@@ -4,6 +4,9 @@ namespace CommunitySite.Core.Data
 {
     public interface MemberRepository
     {
+
         void Save(Member member);
+        Member GetByEmail(string testTestCom);
     }
+
 }

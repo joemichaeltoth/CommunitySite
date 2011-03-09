@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using CommunitySite.Core.Data;
 using CommunitySite.Core.Domain;
 using CommunitySite.Core.Services.Authentication;
@@ -37,6 +38,27 @@ namespace CommunitySite.Web.UI.Controllers
                                  Email = registrationModel.Email
                              };
             
+            _memberRepository.Save(member);
+            _authenticationService.SignIn(member.Username);
+            return RedirectToAction("Profile");
+        }
+
+        public ActionResult RecoverPassword()
+        {
+            return View("PasswordRecovery", new PasswordRecoveryModel());
+        }
+
+        [HttpPost]
+        public ActionResult RecoverPassword(PasswordRecoveryModel recoveryModel)
+        {
+            if (!ModelState.IsValid)
+                return View("PasswordRecover");
+
+            var member = new Member
+            {
+                Email = recoveryModel.Email
+            };
+
             _memberRepository.Save(member);
             _authenticationService.SignIn(member.Username);
             return RedirectToAction("Profile");

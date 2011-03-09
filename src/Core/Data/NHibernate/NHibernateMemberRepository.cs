@@ -1,4 +1,5 @@
-﻿using CommunitySite.Core.Domain;
+﻿using System;
+using CommunitySite.Core.Domain;
 
 namespace CommunitySite.Core.Data.NHibernate
 {
@@ -14,6 +15,11 @@ namespace CommunitySite.Core.Data.NHibernate
         public void Save(Member member)
         {
             _repository.Save(member);
+        }
+
+        public Member GetByEmail(string testTestCom)
+        {
+            throw new NotImplementedException();
         }
     }
 }
