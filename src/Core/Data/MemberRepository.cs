@@ -6,7 +6,8 @@ namespace CommunitySite.Core.Data
     {
 
         void Save(Member member);
-        Member GetByEmail(string testTestCom);
+        Member GetByEmail(string emailAddress);
+        
     }
 
 }

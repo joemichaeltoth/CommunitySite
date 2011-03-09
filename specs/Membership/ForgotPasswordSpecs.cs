@@ -49,6 +49,8 @@ namespace CommunitySite.Specifications.Registration
 
         It should_get_a_member_by_email = () =>
             A.CallTo(() => _memberRepository.GetByEmail(_recoveryModel.Email)).MustHaveHappened();
+        
+
 
         //It should_email_password_to_recoverer = () =>
         //    A.CallTo(() => _authenticationService.SignIn("username"));

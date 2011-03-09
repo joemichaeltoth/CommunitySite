@@ -17,9 +17,9 @@ namespace CommunitySite.Core.Data.NHibernate
             _repository.Save(member);
         }
 
-        public Member GetByEmail(string testTestCom)
+        public Member GetByEmail(string emailAddress)
         {
-            throw new NotImplementedException();
+            return new Member();
         }
     }
 }

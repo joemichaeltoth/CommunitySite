@@ -51,17 +51,11 @@ namespace CommunitySite.Web.UI.Controllers
         [HttpPost]
         public ActionResult RecoverPassword(PasswordRecoveryModel recoveryModel)
         {
-            if (!ModelState.IsValid)
-                return View("PasswordRecover");
 
-            var member = new Member
-            {
-                Email = recoveryModel.Email
-            };
 
-            _memberRepository.Save(member);
-            _authenticationService.SignIn(member.Username);
+            var member = _memberRepository.GetByEmail(recoveryModel.Email);
             return RedirectToAction("Profile");
+
         }
     }
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using CommunitySite.Core.Domain;
 using NHibernate;
 
 namespace CommunitySite.Core.Data.NHibernate
@@ -18,6 +21,16 @@ namespace CommunitySite.Core.Data.NHibernate
             {
                 session.SaveOrUpdate(item);
             }
+        }
+
+        public IQueryable<T> All<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Member GetByEmail(string emailAddress)
+        {
+            throw new NotImplementedException();
         }
     }
 }
